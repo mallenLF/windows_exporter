@@ -49,6 +49,7 @@ mkdir -Force WiX | Out-Null
 Expand-Archive -Path "${sourceDir}\wix-binaries.zip" -DestinationPath WiX -Force
 
 Copy-Item -Force $PathToExecutable Work/windows_exporter.exe
+Copy-Item -Force ../logo/logo.ico Work/logo.ico
 
 Write-Verbose "Creating windows_exporter-${Version}-${Arch}.msi"
 $wixArch = @{"amd64" = "x64"; "386" = "x86"}[$Arch]

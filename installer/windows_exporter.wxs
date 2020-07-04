@@ -15,6 +15,8 @@
              Description="windows_exporter $(var.Version) installer" Compressed="yes" />
     <Media Id="1" Cabinet="windows_exporter.cab" EmbedCab="yes"/>
     <MajorUpgrade Schedule="afterInstallExecute" DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." />
+    <Icon Id="logo.ico" SourceFile="Work\logo.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="logo.ico" />
 
     <Property Id="ENABLED_COLLECTORS" Secure="yes"/>
     <SetProperty Id="CollectorsFlag" After="InstallFiles" Sequence="execute" Value="--collectors.enabled [ENABLED_COLLECTORS]">ENABLED_COLLECTORS</SetProperty>
